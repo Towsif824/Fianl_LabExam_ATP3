@@ -13,28 +13,29 @@
 		<table>
 			<tr>
 				<td>User Name</td>
-				<td><input type="text" name="username" value="{{$users->username}}"></td>
+				<td><input type="text" name="username" value="{{$users->username}}">@error('username'){{$message}}@enderror</td>
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><input type="password" name="password" value="{{$users->password}}"></td>
+				<td><input type="password" name="password" value="{{$users->password}}">@error('password'){{$message}}@enderror</td>
 			</tr>
 			<tr>
 				<td>Employee Name</td>
-				<td><input type="text" name="ename" value="{{$users->ename}}"></td>
+				<td><input type="text" name="ename" value="{{$users->ename}}">@error('ename'){{$message}}@enderror</td>
 			</tr>
 			<tr>
 				<td>Company Name</td>
-				<td><input type="text" name="cname" value="{{$users->cname}}"></td>
+				<td><input type="text" name="cname" value="{{$users->cname}}">@error('cname'){{$message}}@enderror</td>
 			</tr>
 			<tr>
 				<td>Phone</td>
-				<td><input type="text" name="phone" value="{{$users->phone}}"></td>
+				<td><input type="text" name="phone" value="{{$users->phone}}">@error('phone'){{$message}}@enderror</td>
 			</tr>
 
 			<tr>
 				<td>Type</td>
-				<td><input type="text" name="type" value="{{$users->type}}"></td>
+				<td><input type="text" name="type" value="{{$users->type}}">
+				@error('type'){{$message}}@enderror</td>
 			</tr>
 			<tr>
 				<td></td>

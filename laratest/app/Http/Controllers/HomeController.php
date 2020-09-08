@@ -67,7 +67,17 @@ class HomeController extends Controller
 
     function update($id, Request $request){
 
-    	$users = User::findorfail($id);
+    	request()->validate([
+        'username' => 'required|string|max:100',
+        'password' => 'required|min:6',
+        'ename' => 'required',
+        'cname' => 'required',
+        'phone' => 'required|string',
+        'type' => 'required|string',
+        
+        ]);
+
+        $users = User::findorfail($id);
         $users->username= $request->username;
         $users->password= $request->password;
         $users->ename= $request->ename;
