@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Validator;
 class HomeController extends Controller
 {
 
@@ -17,6 +18,40 @@ class HomeController extends Controller
     public function create(Request $request){
         return view('home.create');
     }
+
+     public function store(Request $request)
+     {
+        $validate  = Validator::make($request->all(), [
+            
+            'username'  => 'required|max:5',
+            'password'  => 'required',
+            'ename'      => 'required',
+            'cname'  => 'required',
+            'phone'      => 'required',
+            'type'      => 'required',
+        ]);
+
+        $val = $validate->validated();
+
+    if($val==null){
+        return back()->withError($validate)->withInput();
+    }else{
+
+        $user = new User();
+            $user->username     = $request->username;
+            $user->password     = $request->password;
+            $user->ename         = $request->ename;
+            $user->cname     = $request->cname;
+            $user->phone         = $request->phone;
+            $user->type         = $request->type;
+            
+            
+            $user->save();
+
+             return redirect()->route('home.index');
+
+     }
+ }
 
     public function edit($id){
 

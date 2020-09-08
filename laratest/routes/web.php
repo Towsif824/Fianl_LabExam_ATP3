@@ -26,7 +26,7 @@ Route::get('/logout', ['uses'=>'logoutController@index']);
 
 Route::middleware(['sess'])->group(function(){
 
-	Route::get('/home', 'HomeController@index');
+	Route::get('/home', 'HomeController@index')->name('home.index');
 
 	Route::group(['middleware'=>['type']], function(){
 		Route::get('/home/edit/{id}', 'HomeController@edit');

@@ -31,8 +31,7 @@
 				<td>Phone</td>
 				<td><input type="text" name="phone" value="{{$users->phone}}"></td>
 			</tr>
-			
-			
+
 			<tr>
 				<td>Type</td>
 				<td><input type="text" name="type" value="{{$users->type}}"></td>
