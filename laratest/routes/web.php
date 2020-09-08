@@ -33,6 +33,8 @@ Route::middleware(['sess'])->group(function(){
 		Route::post('/home/edit/{id}', 'HomeController@update');
 		Route::get('/home/delete/{id}', 'HomeController@delete');
 		Route::post('/home/delete/{id}', 'HomeController@destroy');
+		Route::get('/home/create', 'HomeController@create')->name('home.create');
+		Route::post('/home/create', 'HomeController@store');
 	});
 });
 

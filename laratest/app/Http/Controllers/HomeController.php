@@ -14,6 +14,10 @@ class HomeController extends Controller
         return view('home.index', compact('users'));
     }
 
+    public function create(Request $request){
+        return view('home.create');
+    }
+
     public function edit($id){
 
     	$users = User::findorfail($id);
