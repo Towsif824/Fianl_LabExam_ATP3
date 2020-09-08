@@ -34,6 +34,8 @@ Route::middleware(['sess'])->group(function(){
 	Route::post('/employeer/createJob', 'employeerController@store');
 	Route::get('/employeer/edit/{id}', 'employeerController@edit');
 	Route::post('/employeer/edit/{id}', 'employeerController@update');
+	Route::get('/employeer/delete/{id}', 'employeerController@delete');
+	Route::post('/employeer/delete/{id}', 'employeerController@destroy');
 
 	Route::group(['middleware'=>['type']], function(){
 		Route::get('/home/edit/{id}', 'HomeController@edit');

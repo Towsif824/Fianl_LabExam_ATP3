@@ -7,17 +7,21 @@
 
 	<h1>Delete user page</h1>
 
-	<form method="post">
+	<form method="post"  >
 		@csrf
-		<table>
+		<table border="1">
 			<tr>
-				<td>UserName</td>
-				<td>{{$user['username']}}</td>
+				<td>Company Name </td>
+				<td>{{$user['companyname']}}</td>
 			</tr>
 
 			<tr>
-				<td>Password</td>
-				<td>{{$user['password']}}</td>
+				<td>Title </td>
+				<td>{{$user['title']}}</td>
+			</tr>
+			<tr>
+				<td>Location </td>
+				<td>{{$user['location']}}</td>
 			</tr>
 			
 		</table>

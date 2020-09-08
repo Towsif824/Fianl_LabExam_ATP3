@@ -8,7 +8,7 @@
 	<h1>Welcome home!  {{session('username')}}</h1>
 
 	<a href="/home/create">Create User</a> |
-	<a href="/logout">logout</a>
+	<a href="/logout">logout</a> |
 	<a href="/employeer/createJob">Add Job</a>
 	
 

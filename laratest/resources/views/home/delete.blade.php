@@ -7,7 +7,7 @@
 
 	<h1>Delete user page</h1>
 
-	<form method="post">
+	<form method="post" border="1">
 		@csrf
 		<table>
 			<tr>

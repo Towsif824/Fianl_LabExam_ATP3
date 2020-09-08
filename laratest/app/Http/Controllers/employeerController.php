@@ -78,5 +78,21 @@ class employeerController extends Controller
 
     }
 
+    function delete($id){
+
+         $user = Job::find($id);
+        return view('employeer.delete')->with('user', $user);
+
+    }
+
+    function destroy($id, Request $request){
+
+         if(Job::destroy($id)){
+            return redirect()->route('employeer.index');
+        }else{
+            return redirect()->route('employeer.delete', $id);
+        }
+    }
+
 
 }
