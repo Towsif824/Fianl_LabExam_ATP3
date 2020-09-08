@@ -12,15 +12,13 @@
 */
 
 Route::get('/', function () {
-    echo "index page";
+    return view('test');
 });
 
 
-Route::get('/welcome', function(){
-	return view('test');
-});
 
-
+Route::get('/register', 'registrationController@registration')->name('registration.registration');
+Route::post('/register', 'registrationController@postRegistration')->name('registration.registration');
 Route::get('/login', 'LoginController@index');
 Route::post('/login', ['uses'=>'LoginController@verify']);
 Route::get('/logout', ['uses'=>'logoutController@index']);
