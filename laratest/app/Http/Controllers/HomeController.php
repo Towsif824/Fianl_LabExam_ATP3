@@ -33,9 +33,14 @@ class HomeController extends Controller
 
         $val = $validate->validated();
 
-    if($val==null){
-        return back()->withError($validate)->withInput();
-    }else{
+    if($validate->fails()){
+            return redirect()->route('home.create')
+                            ->with('errors', $validate->errors())
+                            ->withInput();
+            return back()
+                    ->with('errors', $validate->errors())
+                    ->withInput();
+        }else{
 
         $user = new User();
             $user->username     = $request->username;
