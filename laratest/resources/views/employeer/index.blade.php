@@ -32,8 +32,8 @@
 			<td>{{ $user->location }}</td>
 			<td>{{ $user->salary }}</td>
 			<td>
-				<a href="/home/edit/{{$user->id}}">Edit</a> |
-				<a href="/home/delete/{{$user->id}}">Delete</a>
+				<a href="/employeer/edit/{{$user->id}}">Edit</a> |
+				<a href="/employeer/delete/{{$user->id}}">Delete</a>
 			</td>
 		</tr>
 	@endforeach

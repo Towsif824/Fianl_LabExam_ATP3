@@ -49,7 +49,34 @@ class employeerController extends Controller
 
              return redirect()->route('employeer.index');
 
-     }
- }
+    	 }
+	 }
+	 public function edit($id){
+
+    	$users = Job::findorfail($id);
+    	return view('employeer.edit', compact('users'));
+
+    }
+
+    function update($id, Request $request){
+
+    	request()->validate([
+        	'companyname'  => 'required',
+            'title'      => 'required',
+            'location'  => 'required',
+            'salary'      => 'required',
+        ]);
+
+        $users = Job::findorfail($id);
+        $users->companyname= $request->companyname;
+        $users->title= $request->title;
+        $users->location= $request->location;
+        $users->salary= $request->salary;
+        $users->save();
+
+    	return redirect('/employeer/index')->with('success', 'Data Updated succesfully');
+
+    }
+
 
 }

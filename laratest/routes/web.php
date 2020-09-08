@@ -32,6 +32,8 @@ Route::middleware(['sess'])->group(function(){
 	Route::get('/employeer/index', 'employeerController@index')->name('employeer.index');
 	Route::get('/employeer/createJob', 'employeerController@create')->name('employeer.create');
 	Route::post('/employeer/createJob', 'employeerController@store');
+	Route::get('/employeer/edit/{id}', 'employeerController@edit');
+	Route::post('/employeer/edit/{id}', 'employeerController@update');
 
 	Route::group(['middleware'=>['type']], function(){
 		Route::get('/home/edit/{id}', 'HomeController@edit');
