@@ -26,10 +26,9 @@ class HomeController extends Controller
     	$users = User::findorfail($id);
         $users->username= $request->username;
         $users->password= $request->password;
+        $users->ename= $request->ename;
+        $users->cname= $request->cname;
         $users->type= $request->type;
-        $users->name= $request->name;
-        $users->dept= $request->dept;
-        $users->cgpa= $request->cgpa;
         $users->save();
 
     	return redirect('home')->with('success', 'Data Updated succesfully');
@@ -55,11 +54,4 @@ class HomeController extends Controller
     	return view('home.index')->with('users', $users);
     }
 
-    function getStudentList(){
-    	return  [
-	    			['id'=>'1', 'name'=>'alamin','email'=>'abc@gmail.com', 'password'=>'123'],
-	    			['id'=>'2', 'name'=>'abc','email'=>'abc@aiub.com', 'password'=>'456'],
-	    			['id'=>'3', 'name'=>'xyz','email'=>'xyz@gmail.com', 'password'=>'789']
-				];
-    }
 }

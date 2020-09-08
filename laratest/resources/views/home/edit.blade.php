@@ -7,7 +7,7 @@
 
 	<h1>Edit user page</h1>
 
-	<form method="post" action="/home/edit/{{$users->userId}}">
+	<form method="post" action="/home/edit/{{$users->id}}">
 		
 		{{csrf_field()}}
 		<table>
@@ -20,22 +20,22 @@
 				<td><input type="password" name="password" value="{{$users->password}}"></td>
 			</tr>
 			<tr>
-				<td>Type</td>
-				<td><input type="text" name="type" value="{{$users->type}}"></td>
+				<td>Employee Name</td>
+				<td><input type="text" name="ename" value="{{$users->ename}}"></td>
 			</tr>
-
 			<tr>
-				<td>Name</td>
-				<td><input type="text" name="name" value="{{$users->name}}"></td>
+				<td>Company Name</td>
+				<td><input type="text" name="cname" value="{{$users->cname}}"></td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td><input type="text" name="phone" value="{{$users->phone}}"></td>
 			</tr>
 			
+			
 			<tr>
-				<td>Dept</td>
-				<td><input type="text" name="dept" value="{{$users->dept}}"></td>
-			</tr>
-			<tr>
-				<td>CGPA</td>
-				<td><input type="text" name="cgpa" value="{{$users->cgpa}}"></td>
+				<td>Type</td>
+				<td><input type="text" name="type" value="{{$users->type}}"></td>
 			</tr>
 			<tr>
 				<td></td>

@@ -24,15 +24,6 @@ Route::post('/login', ['uses'=>'LoginController@verify']);
 Route::get('/logout', ['uses'=>'logoutController@index']);
 
 
-/*Route::group(['middleware'=>'sess'], function(){
-	Route::get('/home', 'HomeController@index')->middleware('sess');
-	Route::get('/home/edit/{id}', 'HomeController@edit')->middleware('sess');
-	Route::post('/home/edit/{id}', 'HomeController@update')->middleware('sess');
-	Route::get('/home/delete/{id}', 'HomeController@delete')->middleware('sess');
-	Route::post('/home/delete/{id}', 'HomeController@destroy')->middleware('sess');
-});*/
-
-
 Route::middleware(['sess'])->group(function(){
 
 	Route::get('/home', 'HomeController@index');

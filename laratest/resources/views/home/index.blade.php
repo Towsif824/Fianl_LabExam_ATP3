@@ -34,8 +34,8 @@
 			<td>{{ $user->phone }}</td>
 			<td>{{ $user->type }}</td>
 			<td>
-				<a href="/home/edit/{{$user->userId}}">Edit</a> |
-				<a href="/home/delete/{{$user->userId}}">Delete</a>
+				<a href="/home/edit/{{$user->id}}">Edit</a> |
+				<a href="/home/delete/{{$user->id}}">Delete</a>
 			</td>
 		</tr>
 	@endforeach
