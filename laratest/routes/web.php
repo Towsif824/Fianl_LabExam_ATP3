@@ -24,9 +24,14 @@ Route::post('/login', ['uses'=>'LoginController@verify']);
 Route::get('/logout', ['uses'=>'logoutController@index']);
 
 
+
+
 Route::middleware(['sess'])->group(function(){
 
 	Route::get('/home', 'HomeController@index')->name('home.index');
+	Route::get('/employeer/index', 'employeerController@index')->name('employeer.index');
+	Route::get('/employeer/createJob', 'employeerController@create')->name('employeer.create');
+	Route::post('/employeer/createJob', 'employeerController@store');
 
 	Route::group(['middleware'=>['type']], function(){
 		Route::get('/home/edit/{id}', 'HomeController@edit');
